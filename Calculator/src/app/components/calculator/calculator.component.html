@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="cal-box">
+        <form name="calculator">
+            <input id="display" type="text" name="display" placeholder="0" value={{currentNumber}} readonly>
+            <br>
+            <input type="button" class="button" value="7" (click)="getNumber('7')">
+            <input type="button" class="button" value="8" (click)="getNumber('8')">
+            <input type="button" class="button" value="9" (click)="getNumber('9')">
+            <input type="button" class="button mathButton" value="+" (click)="getOperation('+')">
+            <br>
+            <input type="button" class="button" value="4" (click)="getNumber('4')">
+            <input type="button" class="button" value="5" (click)="getNumber('5')">
+            <input type="button" class="button" value="6" (click)="getNumber('6')">
+            <input type="button" class="button mathButton" value="-" (click)="getOperation('-')">
+            <br>
+            <input type="button" class="button" value="1" (click)="getNumber('1')">
+            <input type="button" class="button" value="2" (click)="getNumber('2')">
+            <input type="button" class="button" value="3" (click)="getNumber('3')">
+            <input type="button" class="button mathButton" value="*" (click)="getOperation('*')">
+            <br>
+            <input type="button" class="button clearButton" value="C" (click)="clear()">
+            <input type="button" class="button" value="0" (click)="getNumber('0')">
+            <input [(ngModel)]="histories" type="button" class="button mathButton" value="="
+                (click)="getOperation('=')">
+            <input type="button" class="button mathButton" value="/" (click)="getOperation('/')">
+            <br>
+            <input type="button" class="button history" value="History" (click)="pressBtn()">
+            <br>
+        </form>
+    </div>
+</div>
+
+<div class="historyP" *ngIf="showHistory">
+    <dir>
+        <p *ngFor="let history of histories.data.data.histories">{{history.history}} {{history.date}}</p>
+    </dir>
+    <button class="button btn clearButton" (click)="clearAll()">Clear All</button>
+    <button class="button btn" (click)="hideHistory()">hide</button>
+</div>

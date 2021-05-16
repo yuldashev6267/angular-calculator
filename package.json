@@ -1,0 +1,22 @@
+{
+  "name": "calculator-backend",
+  "version": "1.0.0",
+  "description": "Simple calculator",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "yuldashev6267"
+  },
+  "author": "Sarvarbek",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.9",
+    "nodemon": "^2.0.7"
+  }
+}
