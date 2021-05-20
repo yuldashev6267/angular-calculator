@@ -70,7 +70,9 @@ export class CalculatorComponent implements OnInit {
 
   public getOperation(op: string) {
     
-    if (this.operator) {
+    if (this.firstOperand === null) {
+      this.firstOperand = Number(this.currentNumber);     
+    }else if (this.operator&&op!=="-") {
       
       const str1 = this.firstOperand
       this.result = this.doCalculation(this.operator , Number(this.currentNumber))
@@ -80,8 +82,6 @@ export class CalculatorComponent implements OnInit {
       this.currentNumber = String(this.result);
       this.firstOperand = this.result;
        
-    }else if (this.firstOperand === null) {
-      this.firstOperand = Number(this.currentNumber);     
     }
     this.operator = op;
   this.waitForSecondNumber = true;
